@@ -185,8 +185,22 @@ fun CoinScreen(){
                     }
             }
         }
-
-
+        if(state.error.isNotBlank()) {
+            Text(
+                text = state.error,
+                color = MaterialTheme.colors.error,
+                textAlign = TextAlign.Center,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 16.dp)
+                    .align(Alignment.Center)
+            )
+        }
+        if(state.isLoading){
+            CircularProgressIndicator(
+                modifier = Modifier.align(Alignment.Center) // Align inside center of the box
+            )
+        }
     }
 }
 
