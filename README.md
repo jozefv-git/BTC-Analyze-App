@@ -6,6 +6,7 @@ BTC-Analyze-App is basic Android Native Application with Clean Architecture and 
 
 
 - Currently working branch - Jozef
+- Main Branch for now contains only README.md
 
 
 ## Features
