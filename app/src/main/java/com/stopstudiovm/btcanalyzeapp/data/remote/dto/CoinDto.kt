@@ -10,7 +10,7 @@ data class CoinDto(
     val total_volumes: List<List<Double>>
 )
 
-// Conversion of the model for our basic CoinModel
+// Conversion of the model which we got from Json response to our basic CoinModel which will be used inside our UI
 
 fun CoinDto.toCoinModel(): CoinModel{
     return CoinModel(
