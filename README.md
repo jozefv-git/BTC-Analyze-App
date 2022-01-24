@@ -9,7 +9,8 @@ BTC-Analyze-App is basic Android Native Application with Clean Architecture and 
 - Currently working branch - Jozef
 - Main Branch for now contains only README.md
  ### Working functionality
- - Request from the API based on the range selection + update selection if range is bigger than 90 days (API requirements).
+ - Request from the API based on the range selection - Selection can be made from 01.01.2015 until present day. 
+ - Update selection if range is bigger than 90 days (API requirements).
  - Bear trend is showing all decreasing intervals in selected range - if price is lower than the price from day before, bear trend will continue, if price is higher trend is interrupted. Results are based on Daily closing price.
  - Highest trading volume is calculated for selected range with help of MaxByOrNull function based on the daily close.
  - Best day for buy / sell are shown with help of  MaxByOrNull / MinByOrNull function, selection is made from all recieved hourly results for selected range. User will see not exact hour, but lower / highest price from seleced day. At the moment, sell price is based on the highest value for the selected range, if the highest value occured before buy opportunity, then user will see - "No suitable time for sell".
@@ -88,5 +89,6 @@ plugins {
 Aplication is in developing process. I am not a proffesional, I try to learn new techniques.
 ### Todo:
 - [x] Range of values for the API is hardcoded and input field is not working. - Solved with remove of Edit texts and added DatePicker.
+- [x] Fix dates inputs. - Fixed with adding range to DatePicker (Starting at 01.01.2015 - still can be changed later).
 - [ ] Find longest continuous decreasing interval, at the moment we are getting all decreasing intervals.
 - [ ] Prices for Sell and Buy are based on the maximum and minimum value from the list - If the Highest price from the range was before buy price - then the user cannot see anything - Need to be fixed (prob. need to find highest value before start of another decreasing).
