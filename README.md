@@ -2,11 +2,17 @@
 
 BTC-Analyze-App is basic Android Native Application with Clean Architecture and MVVM + usage of Jetpack Compose.
 
-<img src="https://i.ibb.co/JmmmF80/Screenshot-20220119-095713-Btc-Analyze-App.jpg" width="300" height="600">
+<img src="https://i.ibb.co/RjwwF9R/Screenshot-20220124-125842-Btc-Analyze-App.jpg" width="300" height="600">
+<img src="https://i.ibb.co/SVvX8t7/Screenshot-20220124-125915-Btc-Analyze-App.jpg" width="300" height="600">
 
 
 - Currently working branch - Jozef
 - Main Branch for now contains only README.md
+ ### Working functionality
+ - Request from the API based on the range selection + update selection if range is bigger than 90 days (API requirements).
+ - Bear trend is showing all decreasing intervals in selected range - if price is lower than the price from day before, bear trend will continue, if price is higher trend is interrupted. Results are based on Daily closing price.
+ - Highest trading volume is calculated for selected range with help of MaxByOrNull function based on the daily close.
+ - Best day for buy / sell are shown with help of  MaxByOrNull / MinByOrNull function, selection is made from all recieved hourly results for selected range. User will see not exact hour, but lower / highest price from seleced day. At the moment, sell price is based on the highest value for the selected range, if the highest value occured before buy opportunity, then user will see - "No suitable time for sell".
 
 
 ## Features
@@ -81,5 +87,6 @@ plugins {
 ## Notes
 Aplication is in developing process. I am not a proffesional, I try to learn new techniques.
 ### Todo:
-- Range of values for the API is hardcoded and input field is not working.
-- For change of the range from which Retrofit is fetching data, use function getCoin(startDate,endDate) inside the CoinViewModel.
+- [x] Range of values for the API is hardcoded and input field is not working. - Solved with remove of Edit texts and added DatePicker.
+- [ ] Find longest continuous decreasing interval, at the moment we are getting all decreasing intervals.
+- [ ] Prices for Sell and Buy are based on the maximum and minimum value from the list - If the Highest price from the range was before buy price - then the user cannot see anything - Need to be fixed (prob. need to find highest value before start of another decreasing).
