@@ -92,3 +92,4 @@ Aplication is in developing process. I am not a proffesional, I try to learn new
 - [x] Fix dates inputs. - Fixed with adding range to DatePicker (Starting at 01.01.2015 - still can be changed later).
 - [ ] Find longest continuous decreasing interval, at the moment we are getting all decreasing intervals.
 - [ ] Prices for Sell and Buy are based on the maximum and minimum value from the list - If the Highest price from the range was before buy price - then the user cannot see anything - Need to be fixed (prob. need to find highest value before start of another decreasing).
+- [ ] When we change the language from English to different one, and use the date picker, the app will crash. Reason is different provided date for the API - need to be fixed
